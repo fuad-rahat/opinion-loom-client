@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link.active {
+    font-weight: bold;
+    background-color: hsl(36, 96%, 53%);
+    color:white
+  }
