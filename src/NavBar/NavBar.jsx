@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import useAnnouncement from '../Hooks/useAnnouncement';
-
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
   const [announce, refetch] = useAnnouncement();
@@ -53,8 +52,8 @@ const NavBar = () => {
         <div className="navbar-end gap-2">
           {user?.email ? (
             <div className={`dropdown`}>
-              <div tabIndex={0} role="button" className='btn w-16 h-16 rounded-full '>
-                <img className='max-w-14 max-h-14 rounded-full' src={user.photoURL} alt="" />
+              <div tabIndex={0} role="button" className='btn bg-red-700 w-16 h-16 rounded-full'>
+                <img className='max-w-14 max-h-14 rounded-full' src={user?.photoURL} alt="No Image" />
               </div>
               <ul tabIndex={0} className="dropdown-content gap-1 -left-40 dropdown-left z-[1] menu px-1 shadow bg-base-100 rounded-box">
                 <li><NavLink className={'flex justify-center btn-disabled text-center'}>{user?.displayName}</NavLink></li>
