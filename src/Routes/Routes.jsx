@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         },{
           path:"/posts/:id",
           element:<PostCart></PostCart>,
-          loader:({params})=>fetch(`https://opinionloom-server-58m8otk87-md-muhtasim-fuad-rahats-projects.vercel.app/posts/${params.id}`)
+          loader:({params})=>fetch(`https://opinionloom-server.vercel.app/posts/${params.id}`)
         },
         {
           path:'/notification',

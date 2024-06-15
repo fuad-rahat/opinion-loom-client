@@ -42,7 +42,7 @@ const NavBar = () => {
               {navItem}
             </ul>
           </div>
-          <img src={'/public/opinion.jpg'} className='w-12 h-12 rounded-3xl border-2 border-orange-400' alt="" />
+          <img src={'/opinion.jpg'} className='w-12 h-12 rounded-3xl border-2 border-orange-400' alt="" />
           <a className="font-semibold text-3xl ml-5 text-orange-600">Opinion Loom</a>
         </div>
         <div className="navbar-center hidden lg:flex">
