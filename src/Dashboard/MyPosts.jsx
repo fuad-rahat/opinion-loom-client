@@ -42,7 +42,7 @@ const MyPosts = () => {
         <div className='pt-12'>
             <p className='text-3xl text-center font-bold text-orange-400 my-5'>My Posts</p>
             {sortedPosts.slice(0, visiblePosts).map(post =>
-                <div key={post._id} className='border p-4 mb-4'>
+                <div key={post._id} className='border rounded-xl p-4 mb-4'>
                     <div className='flex items-center mb-2'>
                         <img src={post.photoURL} className='w-10 h-10 rounded-full' alt="User Avatar" />
                         <p className='ml-2'>{post.displayName}</p>

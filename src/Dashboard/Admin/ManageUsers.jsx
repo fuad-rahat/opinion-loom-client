@@ -26,7 +26,7 @@ const ManageUsers = () => {
         })
     }
     return (
-        <div className=' pt-24'>
+        <div className=' max-w-[20em] md:max-w-[50rem] pt-14'>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}

@@ -11,6 +11,7 @@ const MyProfile = () => {
   const [posts] = usePosts();
 
   const match = users.filter(a => a?.email === user?.email);
+  const postMatch=posts.filter(b=>b.email===user?.email);
   const comments = posts?.reduce((a, c) => {
     return a + c.comments.length;
   }, 0);
@@ -23,24 +24,26 @@ const MyProfile = () => {
 
   return (
     <div className='pt-20'>
-      <div className='flex justify-evenly'>
-        <div>
-          <p className='text-4xl'>Name: {match[0]?.displayName}</p>
-          <p className='text-2xl'>Email: {match[0]?.email}</p>
-          <p className='text-2xl'>Badge: {match[0]?.badge}</p>
+      <div className=' flex justify-evenly'>
+        <div className='max-sm:max-w-[15rem]'>
+          <p className='text-sm md:text-4xl'>Name: {match[0]?.displayName}</p>
+          <p className='text-sm md:text-2xl'>Email: {match[0]?.email}</p>
+          <p className='text-sm md:text-2xl'>Badge: {match[0]?.badge}</p>
         </div>
         <div>
-          <img src={user?.photoURL} className='w-32 h-32 rounded-2xl' alt="User Profile" />
+          <img src={user?.photoURL} className='w-20 h-20 md:w-32 md:h-32 rounded-2xl' alt="User Profile" />
         </div>
       </div>
-      <div className='flex flex-col mt-10 items-center'>
+      {
+        postMatch[0] && <div className='flex flex-col mt-10 items-center'>
         <p className='text-2xl text-orange-400'>Last 3 posts</p>
-        {posts.slice(0, 3).reverse().map((post, index) => (
+        {postMatch?.slice(0, 3).reverse().map((post, index) => (
           <div key={post._id}>
             <p>Post {index + 1} : {post.postTitle}</p>
           </div>
         ))}
       </div>
+      }
       <div>
         {match[0]?.role === 'admin' && (
           <div className='p-5'>

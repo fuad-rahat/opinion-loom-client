@@ -105,7 +105,7 @@ const AddPost = () => {
 
   return (
     <div className='pt-24'>
-      <div className=' max-w-5xl mx-auto'>
+      <div className=' max-sm:p-5 md:max-w-5xl mx-auto'>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='flex gap-2 justify-evenly '>
             <div className='flex-1'>

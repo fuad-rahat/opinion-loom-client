@@ -3,12 +3,14 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 import useAnnouncement from '../Hooks/useAnnouncement';
 import useUsers from '../Hooks/useUsers';
+
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
-  const [users,refetch]=useUsers();
+  const [users, refetch] = useUsers();
   const [announce] = useAnnouncement();
-  const match= users.filter(us=>us.email===user?.email);
+  const match = users.filter(us => us.email === user?.email);
   refetch();
+
   const logoutHandler = (e) => {
     e.preventDefault();
     logout()
@@ -32,20 +34,22 @@ const NavBar = () => {
 
   return (
     <div className=''>
-      <div className="navbar fixed max-h-2 z-10 opacity-60 bg-orange-100 max-w-screen-full mx-auto text-white">
+      <div className="navbar fixed max-h-2 z-10  bg-orange-100 max-w-screen-full mx-auto text-white">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="dropdown text-black text-xs">
+            <div tabIndex={0} role="button" className="lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" className="mx-1 text-black h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] shadow bg-slate-500  rounded-box w-72 md:w-52">
               {navItem}
             </ul>
           </div>
-          <img src={'/opinion.jpg'} className='w-12 h-12 rounded-3xl border-2 border-orange-400' alt="" />
-          <a className="font-semibold text-3xl ml-5 text-orange-600">Opinion Loom</a>
+          <div className='flex items-center gap-2'>
+            <NavLink to={'/'}><img src={'/opinion.jpg'} className='w-10 h-10 md:w-12 md:h-12 rounded-3xl border-2 border-orange-400' alt="" /></NavLink>
+            <NavLink to={'/'}><a className="font-semibold md:text-3xl text-orange-600">Opinion Loom</a></NavLink>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal">
@@ -56,7 +60,7 @@ const NavBar = () => {
           {user?.email ? (
             <div className={`dropdown`}>
               <div tabIndex={0} role="button" className='btn w-16 h-16 rounded-full'>
-                <img className='max-w-14 max-h-14 rounded-full' src={match[0]?.photoURL} alt="No Image" />
+                <img className='max-w-14 max-h-14 rounded-full' src={match[0]?.photoURL || user?.photoURL} alt="No Image" />
               </div>
               <ul tabIndex={0} className="dropdown-content gap-1 -left-40 dropdown-left z-[1] menu px-1 shadow bg-base-100 rounded-box">
                 <li><NavLink className={'flex justify-center btn-disabled text-center'}>{user?.displayName}</NavLink></li>

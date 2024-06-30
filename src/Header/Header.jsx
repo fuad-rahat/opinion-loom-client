@@ -27,8 +27,8 @@ const Header = () => {
       <div className="hero flex justify-center min-h-screen bg-[url('/public/two.jpg')]">
         <div className="hero-content text-center rounded-3xl">
           <div className="max-w-xl relative">
-            <h1 className="text-8xl w-full font-bold text-orange-400">Hello there</h1>
-            <p className="py-2 text-orange-400 text-xl font-bold">Start connecting with people who share your interests.</p>
+            <h1 className= "text-5xl md:text-8xl w-full font-bold text-orange-400">Hello there</h1>
+            <p className="py-2 text-orange-400 text-lg md:text-xl font-bold">Start connecting with people who share your interests.</p>
             <TypeAnimation
               className='w-full'
               sequence={[
@@ -37,26 +37,28 @@ const Header = () => {
                 'The community to express your mind',
                 1000,
               ]}
-              speed={80}
-              style={{ fontSize: '1.2em', color: 'white', backgroundColor: 'orange' }}
+              speed={50}
+              style={{ fontSize: '1.1em', color: 'white', backgroundColor: 'orange' }}
               repeat={Infinity}
             />
-            <div className="relative mt-5">
+            <div className="relative flex mt-5">
               <input
                 type="text"
                 name="search"
                 value={searchQuery}
                 onChange={handleInputChange}
                 placeholder="Search"
-                className="input rounded-r-none w-28 md:w-auto"
+                className="input rounded-r-none w-20 md:w-52 inline-flex"
               />
+             <button className='btn border-none inline-flex text-white md:text-lg bg-orange-500 rounded-l-none'>Get Started</button>
+
               {searchQuery && posts.length > 0 && (
                 
-                <div className="absolute left-20 right-0 mt-1 max-w-[22rem] bg-white shadow-lg rounded-md overflow-hidden overflow-y-auto">
+                <div className="absolute  top-12 max-w-[22rem]  shadow-lg rounded-md overflow-hidden overflow-y-auto">
                   {posts.map(post => (
                     <div
                       key={post._id}
-                      className="cursor-pointer border-2 text-start pl-3 border-green-500 p-2 hover:bg-gray-100"
+                      className=" my-1 cursor-pointer leading-5 border-2 text-start rounded-lg pl-3 bg-slate-200 border-green-500 p-2 hover:bg-orange-400 hover:text-white"
                       onClick={() => handlePostClick(post._id)}
                     >
                       {post.postTitle}
@@ -64,7 +66,6 @@ const Header = () => {
                   ))}
                 </div>
               )}
-              <button className='btn border-none text-white text-lg bg-orange-500 rounded-l-none'>Get Started</button>
             </div>
           </div>
         </div>

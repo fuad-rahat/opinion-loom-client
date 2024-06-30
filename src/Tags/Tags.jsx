@@ -39,14 +39,14 @@ const Tags = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className='max-w-[15em] md:max-w-[35em]  mx-auto'>
+      <div className='max-w-[15em] md:max-w-[45em] '>
         <p className='text-center text-5xl mt-3 font-semibold text-orange-500'>Tags</p>
         <p className='divider'></p>
-        <p className='text-center text-md my-3 font-semibold text-orange-500'>ALL the tags that have been created by this community</p>
-        <div className='my-5 flex gap-5 justify-center items-center max-w-3xl mx-auto'>
+        <p className=' text-center text-md my-3 font-semibold text-orange-500'>ALL the tags that have been created by this community</p>
+        <div className='flex flex-wrap gap-5 justify-center'>
           {tags.map(item => (
-            <p key={item._id}>{item.tag}</p>
+            <p className=' bg-cyan-700 rounded-lg border-2 border-orange-500 p-1 text-white' key={item._id}>{item.tag}</p>
           ))}
         </div>
         <div>

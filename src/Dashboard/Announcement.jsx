@@ -54,7 +54,7 @@ const Announcement = () => {
     };
 
     return (
-        <div className='pt-20'>
+        <div className='pt-20 max-sm:p-3'>
             <p className='text-4xl text-center text-orange-400'>Announcement</p>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex gap-5 justify-evenly '>

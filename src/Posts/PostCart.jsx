@@ -172,7 +172,7 @@ const PostCart = () => {
                     <div className="badge">{postData.downVote}</div>
                 </button>
             </div>
-            <div className='flex'>
+            <div className='md:flex '>
                 <div className='my-2'>
                     <form onSubmit={handleComment}>
                         <div>
@@ -220,7 +220,7 @@ const PostCart = () => {
             </div>
             <div>
                 {postData?.comments?.slice(0, commentsToShow).reverse().map((item, index) => (
-                    <div key={index} className='p-2 border-2 w-1/2 rounded-r-xl grid gap-3 border-green-500'>
+                    <div key={index} className='p-2 border-2 md:w-1/2 rounded-r-xl grid gap-3 border-green-500'>
                         <p className='text-orange-400'>{item?.name}</p>
                         <p>
                             {expandedComments[index] ? item?.comment : `${item?.comment.slice(0, 20)}...`}

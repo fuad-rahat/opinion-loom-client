@@ -4,7 +4,7 @@ import useAnnouncement from '../Hooks/useAnnouncement';
 const Notification = () => {
     const [announce,refetch]=useAnnouncement();
     return (
-        <div className='flex flex-col gap-10 p-4 pt-16 '>
+        <div className='flex flex-col gap-10 p-4 pt-20 '>
             {
                 announce.reverse().map((an)=>
                     <div className='bg-orange-300 p-4 max-w-2xl text-white rounded-xl' key={an._id}>
