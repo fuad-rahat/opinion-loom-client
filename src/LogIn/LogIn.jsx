@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '../Providers/AuthProviders';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
     const {login,googleSign}=useContext(AuthContext);
@@ -81,7 +81,10 @@ const LogIn = () => {
         <div className='btn' onClick={googleSigninHandler}>Google <i className="fa-brands fa-google"></i></div>
       </div>
       </form>
-      
+      <div className='flex flex-col justify-center items-center'>
+      Don't you have an account?<br />
+           <span><Link to={'/joinus'} className=' text-xl text-red-500 font-semibold '>Register</Link> Now</span>  
+            </div>
     </div>
   </div>
 </div>

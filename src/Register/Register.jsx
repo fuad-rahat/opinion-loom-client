@@ -4,7 +4,7 @@ import { AuthContext } from '../Providers/AuthProviders';
 import useAxiosPublic from '../Hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useUsers from '../Hooks/useUsers';
 
 const Register = () => {
@@ -133,8 +133,13 @@ const Register = () => {
                 <input type="submit" className='btn bg-orange-500 text-white text-xl' value="Submit" />
               </div>
             </form>
+            <div className='flex flex-col justify-center items-center'>
+            Already Registered?<br />
+           <span><Link to={'/login'} className=' text-xl text-red-500 font-semibold '>Log In</Link> Now</span>  
+            </div>
           </div>
         </div>
+        
       </div>
     </div>
   );

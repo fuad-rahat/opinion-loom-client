@@ -25,7 +25,7 @@ const NavBar = () => {
       <li><NavLink to={'/'} activeClassName="active" className={'bg-black text-white btn btn-sm nav-link'}>Home</NavLink></li>
       <li><NavLink to={'/membership'} activeClassName="active" className={'bg-black text-white btn btn-sm nav-link'}>Membership</NavLink></li>
       <li><NavLink className={'btn bg-black text-white btn-sm nav-link '} activeClassName="active" to={'/notification'}>
-        <i className="bg-black text-white fa-solid fa-bell">
+        <i className=" text-white fa-solid fa-bell">
           <div className="badge badge-sm mx-1">{announce.length}</div>
         </i>
       </NavLink></li>
